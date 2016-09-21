@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 将Json字符串反序列化为Java对象
@@ -27,14 +28,35 @@ public class JsonDeserializeToJava {
         //从json映射到java对象，得到country对象后就可以遍历查找
         Country country = mapper.readValue(jsonToJava, Country.class);
         System.out.println("country_id:" + country.getCountry_id());
+
         //设置时间格式，方便阅读
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        //国庆日
         String birthDate = dateFormat.format(country.getBirthDate());
         System.out.println("birthDate:" + birthDate);
 
+        //省和人口
         List<Province> provinces = country.getProvinces();
         for (Province province : provinces){
             System.out.println("province:" + province.name + "\n" + "population:" + province.population);
+        }
+
+        //民族
+        List<String> nations = country.getNation();
+        for (String nation : nations) {
+            System.out.println("nation:" + nation);
+        }
+
+        //湖
+        String[] lakes = country.getLakes();
+        for (int i = 0; i < lakes.length; i++){
+            System.out.println("lake:" + lakes[i]);
+        }
+
+        //交通
+        Map<String, Integer> traffic = country.getTraffic();
+        for (String key : traffic.keySet()) {
+            System.out.println("traffic:" + key + ", " + traffic.get(key));
         }
     }
 }

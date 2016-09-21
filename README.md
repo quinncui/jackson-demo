@@ -1,5 +1,5 @@
 # jackson-demo
 
-# A databinding
+# A data binding
 # B tree model
 # C streaming api

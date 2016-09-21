@@ -69,6 +69,11 @@ public class Country {
         this.traffic = traffic;
     }
 
+    //添加键值
+    public void addTraffic(String key, Integer value) {
+        traffic.put(key, value);
+    }
+
     @Override
     public String toString(){
         return "Country [country_id=" + country_id + ", birthDate=" + birthDate

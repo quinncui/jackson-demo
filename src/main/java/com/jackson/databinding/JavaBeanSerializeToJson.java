@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.File;
+import java.util.Map;
 
 /**
  * Created by frankun on 2016/9/20.
@@ -46,8 +47,8 @@ public class JavaBeanSerializeToJson {
         provinces.add(province2);
         country.setProvinces(provinces);
 
-//        country.addTraffic("Train(KM)", 112000);
-//        country.addTraffic("HighWay(KM)", 4240000);
+        country.addTraffic("Train(KM)", 112000);
+        country.addTraffic("HighWay(KM)", 4240000);
 
         //如下代码只是增加可读性，生产中并不需要，因为会增加Json内容
         mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
