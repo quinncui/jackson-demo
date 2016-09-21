@@ -20,7 +20,7 @@ public class JsonDeserializeToJava {
     public static void main(String[] args) throws Exception{
         //ObjectMapper类用序列化与反序列化映射器
         ObjectMapper mapper = new ObjectMapper();
-        File jsonToJava = new File("country.json");
+        File jsonToJava = new File("dataBindingCountry.json");
         //当反序列化json时，未知属性会引起反序列化被打断，这里我们禁用未知属性打断反序列化
         //例如，json里有10个属性，而我们的bean中只定义了2个属性，其他8个属性将被忽略
         mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);

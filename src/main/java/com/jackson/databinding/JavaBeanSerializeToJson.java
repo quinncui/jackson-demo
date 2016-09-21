@@ -55,7 +55,7 @@ public class JavaBeanSerializeToJson {
         //配置mapper忽略空属性
         mapper.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
         //默认情况，Jackson使用Java属性字段名称作为Json属性名称，也可以使用Jackson annotations改变Json属性名称
-        mapper.writeValue(new File("country.json"), country);
+        mapper.writeValue(new File("dataBindingCountry.json"), country);
     }
 
     public static void main(String[] args) throws Exception{
